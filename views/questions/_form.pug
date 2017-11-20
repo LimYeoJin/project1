@@ -1,0 +1,21 @@
+.form-group
+  label(for="title") 이벤트 이름
+  input.form-control(type="text", name="title",  value=question.title)
+.form-group
+  label(for="location") 장소
+  textarea.form-control(name="content", rows="5")= question.content
+//- .form-group
+//-   label(for="start_time") 시작시간
+//-   input.form-control(type="text", name="tags" value=question.tags ? question.tags.join(" ") : "")
+//- .form-group
+//-   label(for="end_time") 종료시간
+//-   input.form-control(type="text", name="tags" value=question.tags ? question.tags.join(" ") : "")
+.form-group
+  label(for="description") 설명
+  textarea.form-control(name="content", rows="5")= question.content
+.form-group
+  label(for="register_name") 등록 조직 이름
+  textarea.form-control(name="content", rows="5")= question.content
+.form-group
+  label(for="register_description") 등록 조직 설명
+  textarea.form-control(name="content", rows="5")= question.content
