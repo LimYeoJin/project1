@@ -28,4 +28,13 @@ module.exports = (app, passport) => {
     req.flash('success', 'Successfully signed out');
     res.redirect('/');
   });
+  app.get('/auth/kakao',
+  passport.authenticate('kakao', { scope : 'email' })
+);
+  app.get('/auth/kakao/callback',
+    passport.authenticate('kakao'))
+  .get('/auth/kakao/callback',passport.authenticate('kakao',{
+  successRedirect: '/profile',
+  failureRedirect: '/'
+  }));
 };
