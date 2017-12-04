@@ -6,19 +6,20 @@
   textarea.form-control(name="content", rows="5")= question.content
 .form-group
   label(for="start_time") 시작시간
-  input.form-control(type="text", name="tags" value=question.tags ? question.tags.join(" ") : "")
+  textarea.form-control(type="text", name="tags1" value=question.tags ? question.tags.join(" ") : "")
 .form-group
   label(for="end_time") 종료시간
-  input.form-control(type="text", name="tags" value=question.tags ? question.tags.join(" ") : "")
+  textarea.form-control(type="text", name="tags2" value=question.tags ? question.tags.join(" ") : "")
 .form-group
   label(for="description") 설명
-  textarea.form-control(name="content", rows="5")= question.content
+  textarea.form-control(name="_description", rows="5")= question.content
 .form-group
   label(for="register_name") 등록 조직 이름
-  textarea.form-control(name="content", rows="5")= question.content
+  textarea.form-control(name="_register_name", rows="5")= question._register_name
 .form-group
   label(for="register_description") 등록 조직 설명
-  textarea.form-control(name="content", rows="5")= question.content
+  textarea.form-control(name="_register_description", rows="5")= question._register_description
+
 divform-group
   labelexampleFormControlSelect1 이벤트 종류
   select.form-control#exampleFormControlSelect1
