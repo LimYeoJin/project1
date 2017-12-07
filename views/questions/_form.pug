@@ -1,57 +1,61 @@
 .form-group
-  label(for="title") 이벤트 이름
-  input.form-control(type="text", name="title",  value=question.title)
+  label(for="title") Title
+  input.form-control(type="text", name="title", placeholder="what's your Event?", value=question.title)
 .form-group
-  label(for="location") 장소
-  textarea.form-control(name="content", rows="5")= question.content
+  label(for="question") Location
+  input.form-control(name="text", name="location",placeholder="Enter location where event occurs.",value=question.location)
 .form-group
-  label(for="start_time") 시작시간
-  textarea.form-control(type="text", name="tags1" value=question.tags ? question.tags.join(" ") : "")
+  label(for="question") Time
+  div.row
+    div.col
+      input.form-control(type="text", name="startTime", placeholder="Start Time",value=question.startTime)
+    div.col
+      input.form-control(type="text", name="startTime", placeholder="Start Time",value=question.startTime)
 .form-group
-  label(for="end_time") 종료시간
-  textarea.form-control(type="text", name="tags2" value=question.tags ? question.tags.join(" ") : "")
+  label(for="question") Description
+  textarea.form-control(name="content",rows="5")=question.content
 .form-group
-  label(for="description") 설명
-  textarea.form-control(name="_description", rows="5")= question.content
+  label(for="question") Register Name
+  input.form-control(type="text",name="registerName", placeholder="Register Name", values=question.register_name)
 .form-group
-  label(for="register_name") 등록 조직 이름
-  textarea.form-control(name="_register_name", rows="5")= question._register_name
-.form-group
-  label(for="register_description") 등록 조직 설명
-  textarea.form-control(name="_register_description", rows="5")= question._register_description
+  label(for="question") Register Description
+  textarea.form-control(type="text",name="registerDescription", placeholder="Register Description")=question.register_description
 
-divform-group
-  labelexampleFormControlSelect1 이벤트 종류
-  select.form-control#exampleFormControlSelect1
-    option Appearance or Signing
-    option Attraction
-    option Camp, Trip, or Retreat
-    option Class, Training, or Workshop
-    option Concert or Performance
-    option Conference
-    option Convention
-    option Dinner or Gala
-    option Festival or Fair
-    option Game or Competition
-    option Meeting or Networking Event
-    option Other
+.form-group
+  label(for="title") Event Type & Event Field
+  div.row
+    div.col
 
-divform-group
-  labelexampleFormControlSelect1 이벤트 분야
-  select.form-control#exampleFormControlSelect1
-    option Business & Professional
-    option Charity & Causes
-    option Community & Culture
-    option Family & Education
-    option Fashion & Beauty 
-    option Film, Media & Entertainment
-    option Food & Drink
-    option Other
+    select#inputState.form-control(type="text",name="type")=question.type
+      option Appearance or Signing
+      option Attraction
+      option Camp, Trip, or Retreat
+      option Class, Training, or Workshop
+      option Concert or Performance
+      option Conference
+      option Convention
+      option Dinner or Gala
+      option Festival or Fair
+      option Game or Competition
+      option Meeting or Networking Event
+      option Other
 
-divform-group
-  labelexampleFormControlSelect1 참가인원 설정
-  select.form-control#exampleFormControlSelect1
-    option 5명 미만
-    option 10명 미만
-    option 15명 미만
-    option 30명 미만
+//- .form-group
+//-   labelexampleFormControlSelect1 이벤트 분야
+//-   select.form-control#exampleFormControlSelect1
+//-     option Business & Professional
+//-     option Charity & Causes
+//-     option Community & Culture
+//-     option Family & Education
+//-     option Fashion & Beauty 
+//-     option Film, Media & Entertainment
+//-     option Food & Drink
+//-     option Other
+
+//- divform-group
+//-   labelexampleFormControlSelect1 참가인원 설정
+//-   select.form-control#exampleFormControlSelect1
+//-     option 5명 미만
+//-     option 10명 미만
+//-     option 15명 미만
+//-     option 30명 미만

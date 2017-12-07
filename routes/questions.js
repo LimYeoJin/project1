@@ -15,14 +15,14 @@ function needAuth(req, res, next) {
   }
 }
 
-function validateForm(form, options){
-  var title = form.title || "";
-  title=title.trim();
+// function validateForm(form, options){
+//   var title = form.title || "";
+//   title=title.trim();
 
-  if(!title){
-    return 'Name is required.';
-  }
-}
+//   if(!title){
+//     return 'Name is required.';
+//   }
+// }
 
 /* GET questions listing. */
 router.get('/', catchErrors(async (req, res, next) => {
@@ -91,7 +91,7 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     title: req.body.title,
     author: user._id,
     content: req.body.content,
-    tags: req.body.tags.split(" ").map(e => e.trim()),
+    // tags: req.body.tags.split(" ").map(e => e.trim()),
   });
   await question.save();
   req.flash('success', 'Successfully posted');
