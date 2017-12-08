@@ -22,7 +22,7 @@
   textarea.form-control(type="text",name="registerDescription", placeholder="Register Description")=question.register_description
 
 .form-group
-  label(for="title") Event Type & Event Field
+  label(for="question") Event Type & Event Field
   div.row
     div.col
 
@@ -39,23 +39,35 @@
       option Game or Competition
       option Meeting or Networking Event
       option Other
+  div.row
+    div.col
+    select#inputState.form-control(type="text",name="field")=question.field  
 
-//- .form-group
-//-   labelexampleFormControlSelect1 이벤트 분야
-//-   select.form-control#exampleFormControlSelect1
-//-     option Business & Professional
-//-     option Charity & Causes
-//-     option Community & Culture
-//-     option Family & Education
-//-     option Fashion & Beauty 
-//-     option Film, Media & Entertainment
-//-     option Food & Drink
-//-     option Other
+      option Business & Professional
+      option Charity & Causes
+      option Community & Culture
+      option Family & Education
+      option Fashion & Beauty 
+      option Film, Media & Entertainment
+      option Food & Drink
+      option Other
 
-//- divform-group
-//-   labelexampleFormControlSelect1 참가인원 설정
-//-   select.form-control#exampleFormControlSelect1
-//-     option 5명 미만
-//-     option 10명 미만
-//-     option 15명 미만
-//-     option 30명 미만
+.form-group
+  label(for="question") Quantity
+  div.row
+    div.col
+    select#inputState.form-control(type="text",name="quantity")=question.quantity
+      option 1
+      option 2
+      option 3
+      option 4
+      option 5
+      option 6
+      option 7
+      option 8
+      option 9
+      option 10
+
+.form-group
+  label(for="question") Ticket
+  input.form-control(type="text", name="ticket",value=question.ticket)

@@ -12,7 +12,8 @@
     .content= answer.content
   .row.card-body
     .col-sm
-   
+    .col-sm.text-right
+      .author
         | answered on #{moment(answer.createdAt).format('YYYY-MM-DD')}
         if answer.author
           | 
