@@ -35,7 +35,7 @@ app.locals.querystring = require('querystring');
 //=======================================================
 mongoose.Promise = global.Promise; // ES6 Native Promise를 mongoose에서 사용한다.
 const connStr = (process.env.NODE_ENV=='production')?
-  'mongodb://<dbuser>:<dbpassword>@ds111476.mlab.com:11476/webtest':
+  'mongodb://dbuser1:dladuwls97@ds111476.mlab.com:11476/webtest':
   'mongodb://localhost/3000';
 
 // 아래는 mLab을 사용하는 경우의 예: 본인의 접속 String으로 바꾸세요.
@@ -63,11 +63,16 @@ app.use(sassMiddleware({
   sourceMap: true
 }));
 
+const sessionStore = new session.MemoryStore();
+const sessionId = 'mjoverflow.sid';
+const sessionSecret =  'TODO: change this secret string for your own'
 // session을 사용할 수 있도록.
 app.use(session({
+  name: sessionId,
   resave: true,
   saveUninitialized: true,
-  secret: 'long-long-long-secret-string-1313513tefgwdsvbjkvasd'
+  store: sessionStore,
+  secret: sessionSecret
 }));
 
 app.use(flash()); // flash message를 사용할 수 있도록
