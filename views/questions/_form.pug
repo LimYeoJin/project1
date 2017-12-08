@@ -3,14 +3,14 @@
   input.form-control(type="text", name="title", placeholder="what's your Event?", value=question.title)
 .form-group
   label(for="question") Location
-  input.form-control(name="text", name="location",placeholder="Enter location where event occurs.",value=question.location)
+  input.form-control(type="text", name="location",placeholder="Enter location where event occurs.",value=question.location)
 .form-group
   label(for="question") Time
   div.row
     div.col
       input.form-control(type="text", name="startTime", placeholder="Start Time",value=question.startTime)
     div.col
-      input.form-control(type="text", name="startTime", placeholder="Start Time",value=question.startTime)
+      input.form-control(type="text", name="finishTime", placeholder="Finish Time",value=question.finishTime)
 .form-group
   label(for="question") Description
   textarea.form-control(name="content",rows="5")=question.content
